@@ -19,8 +19,22 @@ namespace eek_2018_oop
             weightOfPresents = weight;
         }
 
-        public void printMe()
+        /*
+            Add clone method
+        */
+        public SantaClause(SantaClause ob)
         {
+            this.dateOfBirth = ob.dateOfBirth;
+            this.numOfPresents = ob.numOfPresents;
+            this.name = ob.name;
+            weightOfPresents = ob.weightOfPresents;
+        }
+
+        public void printMe(string content=null)
+        {
+            if (content != null) {
+                Console.Write("\n{0}", content);
+            }
             Console.Write("\n{0, -15} {1, 4} {2, 2} {3, 2:f1}",
                           name, dateOfBirth, numOfPresents, weightOfPresents);
         }

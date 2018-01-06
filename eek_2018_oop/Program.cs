@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace eek_2018_oop
 {
@@ -13,6 +14,14 @@ namespace eek_2018_oop
             SantaClause Karmpus = new SantaClause("Karmpus", 2017, 34, 12);
             SantaClause KwanzaBot = new SantaClause("KwanzaBot", 1982, 1, 22);
             SantaClause Kringle = new SantaClause("Kringle", 987);
+
+            SantaClause CloneSanta = new SantaClause(Chris);
+
+            /*
+                Clone santa
+             */
+            Console.WriteLine("Clone Santa");
+            CloneSanta.printMe("Clone Santa: Messange inside");
 
             SantaClause name = Chris;
 
@@ -30,7 +39,6 @@ namespace eek_2018_oop
             /*
                 Array
             */
-
             ArrayList AllSantas = new ArrayList();
             AllSantas.Add(Chris);
             AllSantas.Add(Karmpus);
@@ -40,6 +48,22 @@ namespace eek_2018_oop
 
             Console.WriteLine("\nChristmas characters array");
             foreach(SantaClause x in AllSantas)
+            {
+                x.printMe();
+            }
+
+            /*
+                List array
+            */
+            List<SantaClause> AllSantasList = new List<SantaClause>();
+            AllSantasList.Add(Chris);
+            AllSantasList.Add(Karmpus);
+            AllSantasList.Add(Kringle);
+            AllSantasList.Insert(1, KwanzaBot);
+            AllSantasList.Add(new SantaClause("New Santa", 1943, 22, 1));
+
+            Console.WriteLine("\nChristmas characters array: LIST");
+            foreach (SantaClause x in AllSantasList)
             {
                 x.printMe();
             }
